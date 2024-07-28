@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Http;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace ImageInputForm.Models
 {
@@ -8,6 +9,11 @@ namespace ImageInputForm.Models
         public string? Name { get; set; }
         public string? Description { get; set; }
 
-        public IFormFile? Image { get; set; } // Attribute for uploading image
+        [NotMapped]
+        public IFormFile? Image { get; set; }
+
+        // Property to store the image data or path
+        public byte[]? ImageData { get; set; }
+        public string? ImagePath { get; set; }
     }
 }

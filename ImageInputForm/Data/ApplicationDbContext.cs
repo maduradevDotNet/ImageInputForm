@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using ImageInputForm.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace ImageInputForm.Data
 {
@@ -7,5 +8,7 @@ namespace ImageInputForm.Data
         public ApplicationDbContext(DbContextOptions options) : base(options)
         {
         }
+
+        public DbSet<StudentForm> StudentForms { get; set; }
     }
 }
